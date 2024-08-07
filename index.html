@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Authentication Verification</title>
+</head>
+<body>
+    <div class="container">
+        <div class="greetings-text">
+            <h3>Welcome! <span id="username">User</span></h3>
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="after"></div>
+                <div class="inputs">
+                    <input type="text" spellcheck="false" placeholder=" " class="inpt"   name="fname" required>
+                    <label for="fname">Enter Firstname</label>
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="inputs">
+                    <input type="text" spellcheck="false" placeholder=" " class="inpt" name="midin" required>
+                    <label for="midin">Enter Middle Initial</label>
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="inputs">
+                    <input type="text" spellcheck="false" placeholder=" " class="inpt" name="lname" required>
+                    <label for="lname">Enter Lastname</label>
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="inputs">
+                    <input type="password" spellcheck="false" placeholder=" " class="inpt" name="lrn-id" minlength="0" maxlength="30" required>
+                    <label for="lrn-id">Enter LRN or ID</label>
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="inputs">
+                    <select name="gender" id="gender-id" class="inpt-select" placeholder=" "  required>
+                        <option value="" selected hidden></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="gender">Sex</label>
+                </div>
+                <div class="inputs">
+                    <select name="authority" id="person-authority" class="inpt-select" placeholder=" "  required>
+                        <option value="" selected hidden></option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Corehead">Corehead</option>
+                        <option value="Guidance">Guidance</option>
+                        <option value="Registrar">Registrar</option>
+                        <option value="Principal">Principal</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    <label for="authority">Authority</label>
+                </div>
+                <button type="submit" name="submit">Sign In<i class="fa-solid fa-right-to-bracket"></i></button>
+            </form>
+        </div>
+        <div class="content-side-section">
+            <i class="fa-solid fa-circle-arrow-right"></i>
+            <div class="content-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/8/8b/Zamboanga_del_Sur_National_Highschool.png" alt="ZSNHS Logo in Pagadian City">
+            </div>
+            <div class="content-text">
+                <h3>Security Authentication</h3>
+                <span>Please provide valid information to access this site.</span>
+            </div>
+            <button type="submit" name="submit">Log Out<i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="section1">
+            <div class="inner">
+                Designed with simplicity and interactivity.
+            </div>
+            <div class="social-networks">
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    'use strict';
+    const form = document.querySelector(".container");
+    const open = document.querySelector('.after');
+    const close = document.querySelector(".fa-circle-arrow-right");
+
+    open.addEventListener("click", () => {
+        form.classList.toggle("active");
+    })
+
+    close.addEventListener("click", () => {
+        form.classList.toggle("active");
+    })
+
+
+    // Password Customizations
+    const eye = document.querySelector(".fa-eye");
+    const pwd = document.querySelector("input[type='password']");
+
+    eye.addEventListener("click", () => {
+        if (pwd.value) {
+            eye.classList.contains("fa-eye") ? eye.classList.replace("fa-eye", "fa-eye-slash") : 
+            eye.classList.replace("fa-eye-slash", "fa-eye");
+            pwd.type.toLowerCase() === 'password' ? pwd.type = 'text' : pwd.type = 'password';
+        }
+    });
+
+</script>
+</html>
